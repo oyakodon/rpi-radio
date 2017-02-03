@@ -1,0 +1,51 @@
+doctype html
+html(ng-app='rpi-radio')
+    head
+        <!-- Bootstrap -->
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js')
+        <![endif]-->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js')
+
+        script(src='https://use.fontawesome.com/76cc8e1c2e.js')
+
+
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+        block head
+
+    body(ng-controller='rpi-radio-ctrl')
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            .container
+                .navbar-header
+                    a(href="/").navbar-brand RPiRadio
+
+        block content
+
+        .container
+            .row
+                .col-md-12
+                    hr
+                    footer
+                        p
+                            | &copy; 2017 Oyakodon
+                            a(href='https://github.com/oyakodon/', target='_blank')
+                                font(color="#000")
+                                    span.fa.fa-github-square.fa-lg(style='margin-left: 8px;', aria-hidden="true")
+                            a(href='https://twitter.com/alltekito', target='_blank')
+                                font(color="#000")
+                                    span.fa.fa-twitter-square.fa-lg(style='margin-left: 8px;', aria-hidden="true")
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        block scripts
+        

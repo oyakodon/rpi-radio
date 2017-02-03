@@ -1,0 +1,39 @@
+extends layout
+
+block head
+  title RPiRadio
+  link(rel='stylesheet', href='/stylesheets/app.css')
+
+block content
+  .container(ng-show="result !== null")
+    .alert.alert-success(role="alert", ng-show="result === 'success'", ng-cloak)
+      p
+        span.glyphicon.glyphicon-info-sign(aria-hidden="true")
+        | {{ msg }}
+        button.close(type="button", data-dismiss="alert", aria-label="閉じる")
+          span(aria-hidden="true") &times;
+
+    .alert.alert-warning(role="alert", ng-show="result === 'error'", ng-cloak)
+      p
+        span.glyphicon.glyphicon-exclamation-sign(aria-hidden="true")
+        | {{ msg }}
+        button.close(type="button", data-dismiss="alert", aria-label="閉じる")
+          span(aria-hidden="true") &times;
+
+  .container
+    .row.center-block
+      button.btn.btn-primary.btn-lg.col-xs-12.col-md-4.button-item(ng-repeat="btn_r in btnData_radiko", ng-class="{selected: btn_r.select}", ng-click="btn_radikoClicked($index)")
+        span.glyphicon.glyphicon-play(aria-hidden="true")
+        | {{btn_r.text}}
+
+      button.btn.btn-success.btn-lg.col-xs-12.col-md-4.button-item(ng-repeat="btn_n in btnData_nhk", ng-class="{selected: btn_n.select}", ng-click="btn_nhkClicked($index)")
+        span.glyphicon.glyphicon-play(aria-hidden="true")
+        | {{btn_n.text}}
+
+      button.btn.btn-danger.btn-lg.col-xs-12.col-md-4.button-item(ng-click="stopClicked()")
+        span.glyphicon.glyphicon-stop(aria-hidden="true")
+        | 停止
+
+block scripts
+  script(src='/javascripts/index.js')
+
