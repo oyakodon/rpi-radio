@@ -22,11 +22,11 @@ block content
 
   .container
     .row.center-block
-      button.btn.btn-primary.btn-lg.col-xs-12.col-md-4.button-item(ng-repeat="btn_r in btnData_radiko", ng-class="{selected: btn_r.select}", ng-click="btn_radikoClicked($index)")
+      button.btn.btn-primary.btn-lg.col-xs-12.col-md-4.button-item(ng-repeat="btn_r in btnData_radiko", ng-class="{selected: btn_r.select}", ng-click="btn_radikoClicked($index)", ng-cloak)
         span.glyphicon.glyphicon-play(aria-hidden="true")
         | {{btn_r.text}}
 
-      button.btn.btn-success.btn-lg.col-xs-12.col-md-4.button-item(ng-repeat="btn_n in btnData_nhk", ng-class="{selected: btn_n.select}", ng-click="btn_nhkClicked($index)")
+      button.btn.btn-success.btn-lg.col-xs-12.col-md-4.button-item(ng-repeat="btn_n in btnData_nhk", ng-class="{selected: btn_n.select}", ng-click="btn_nhkClicked($index)", ng-cloak)
         span.glyphicon.glyphicon-play(aria-hidden="true")
         | {{btn_n.text}}
 
